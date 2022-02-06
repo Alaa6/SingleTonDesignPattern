@@ -8,8 +8,9 @@ function Visitors() {
 
 
 Visitors.prototype = {
-    instance : new Visitors ,
+    instance : null ,  // lazy initialization loading 
     getInstance : () => {
+        if(Visitors.prototype.instance == null) {Visitors.prototype.instance = new Visitors}
         return Visitors.prototype.instance;
     },
     
